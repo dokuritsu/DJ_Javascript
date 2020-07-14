@@ -1,6 +1,5 @@
 import "./styles.css";
 
-// var square = document.querySelector("#squares");
 var square = document.getElementById("squares");
 
 square.addEventListener("dblclick", doubleClick);
@@ -12,6 +11,29 @@ square.addEventListener("mouseup", release);
 square.addEventListener("mousedown", hold);
 
 document.body.addEventListener("wheel", scroll);
+
+document.addEventListener("keydown", event => {
+  console.log(event.which);
+  switch (event.which) {
+    case 82:
+      square.style.backgroundColor = "red";
+      break;
+    case 66:
+      square.style.backgroundColor = "blue";
+      break;
+    case 79:
+      square.style.backgroundColor = "darkorange";
+      break;
+    case 89:
+      square.style.backgroundColor = "yellow";
+      break;
+    case 71:
+      square.style.backgroundColor = "green";
+      break;
+    default:
+      square.style.backgroundColor = "white";
+  }
+});
 
 function scroll() {
   console.log("Scrolling through the page");
