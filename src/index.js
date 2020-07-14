@@ -2,15 +2,30 @@ import "./styles.css";
 
 var square = document.getElementById("squares");
 
-square.addEventListener("dblclick", doubleClick);
+square.addEventListener("dblclick", () => {
+  console.log("Square was double clicked");
+  square.style.backgroundColor = "green";
+});
 
-square.addEventListener("mouseover", hover);
+square.addEventListener("mouseover", () => {
+  console.log("Mouse is hovering over square");
+  square.style.backgroundColor = "blue";
+});
 
-square.addEventListener("mouseup", release);
+square.addEventListener("mouseup", () => {
+  console.log("Mouse was released over square");
+  square.style.backgroundColor = "yellow";
+});
 
-square.addEventListener("mousedown", hold);
+square.addEventListener("mousedown", () => {
+  console.log("Mouse was held over square");
+  square.style.backgroundColor = "red";
+});
 
-document.body.addEventListener("wheel", scroll);
+document.body.addEventListener("wheel", () => {
+  console.log("Scrolling through the page");
+  square.style.backgroundColor = "darkorange";
+});
 
 document.addEventListener("keydown", event => {
   console.log(event.which);
@@ -35,27 +50,27 @@ document.addEventListener("keydown", event => {
   }
 });
 
-function scroll() {
-  console.log("Scrolling through the page");
-  square.style.backgroundColor = "darkorange";
-}
+// function scroll() {
+//   console.log("Scrolling through the page");
+//   square.style.backgroundColor = "darkorange";
+// }
 
-function doubleClick() {
-  console.log("Square was double clicked");
-  square.style.backgroundColor = "green";
-}
+// function doubleClick() {
+//   console.log("Square was double clicked");
+//   square.style.backgroundColor = "green";
+// }
 
-function hover() {
-  console.log("Mouse is hovering over square");
-  square.style.backgroundColor = "blue";
-}
+// function hover() {
+//   console.log("Mouse is hovering over square");
+//   square.style.backgroundColor = "blue";
+// }
 
-function release() {
-  console.log("Mouse was released over square");
-  square.style.backgroundColor = "yellow";
-}
+// function release() {
+//   console.log("Mouse was released over square");
+//   square.style.backgroundColor = "yellow";
+// }
 
-function hold() {
-  console.log("Mouse was held over square");
-  square.style.backgroundColor = "red";
-}
+// function hold() {
+//   console.log("Mouse was held over square");
+//   square.style.backgroundColor = "red";
+// }
